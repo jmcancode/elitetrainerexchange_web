@@ -1,6 +1,8 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
-import { FaInstagram, FaMoon, FaSun } from "react-icons/fa";
+import { FaInstagram, FaMoon, FaSun, FaDiscord } from "react-icons/fa";
+import LightLogo from "../assets/light_logo.png";
+import DarkLogo from "../assets/dark_logo.png";
 
 export default function Navbar() {
   const { theme, isDark, toggleTheme } = useTheme();
@@ -14,19 +16,15 @@ export default function Navbar() {
         padding: "1rem 2rem",
         background: theme.background,
         color: theme.text,
-        borderBottom: `1px solid ${theme.subtle}`,
       }}
     >
       {/* Logo */}
-      <div
-        style={{
-          fontWeight: 700,
-          fontSize: "1.25rem",
-          color: theme.text,
-          cursor: "default",
-        }}
-      >
-        Elite Trainer Exchange
+      <div>
+        <img
+          src={isDark ? DarkLogo : LightLogo}
+          alt="Elite Trainer Exchange Logo"
+          style={{ height: "40px" }}
+        />
       </div>
 
       {/* Actions */}
@@ -40,6 +38,15 @@ export default function Navbar() {
         >
           <FaInstagram size={22} />
         </a>
+        {/* <a
+          href="https://discord.gg/fDuFh3sQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Discord"
+          style={{ color: theme.text }}
+        >
+          <FaDiscord size={22} />
+        </a> */}
 
         {/* Theme toggle */}
         <button

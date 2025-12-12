@@ -52,10 +52,10 @@ export default function PrivacyModal({ isOpen, onClose }) {
               style={{
                 marginTop: "1.5rem",
                 padding: "0.5rem 1.25rem",
-                background: theme.accent,
-                border: "none",
+                background: theme.background,
+                border: "1px solid " + theme.text,
                 borderRadius: "6px",
-                color: "#fff",
+                color: theme.text,
                 cursor: "pointer",
               }}
             >
